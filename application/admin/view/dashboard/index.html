@@ -173,7 +173,7 @@
                             <span class="sm-st-icon st-red"><i class="fa fa-users"></i></span>
                             <div class="sm-st-info">
                                 <span>{$totaluser}</span>
-                                {:__('Total user')}
+                                {:__('交易金额')}
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                             <span class="sm-st-icon st-violet"><i class="fa fa-book"></i></span>
                             <div class="sm-st-info">
                                 <span>{$totalviews}</span>
-                                {:__('Total view')}
+                                {:__('交易笔数')}
                             </div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                             <span class="sm-st-icon st-blue"><i class="fa fa-shopping-bag"></i></span>
                             <div class="sm-st-info">
                                 <span>{$totalorder}</span>
-                                {:__('Total order')}
+                                {:__('退费金额')}
                             </div>
                         </div>
                     </div>
@@ -200,16 +200,16 @@
                             <span class="sm-st-icon st-green"><i class="fa fa-cny"></i></span>
                             <div class="sm-st-info">
                                 <span>{$totalorderamount}</span>
-                                {:__('Total order amount')}
+                                {:__('退费笔数')}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-8">
+                    <!-- <div class="col-lg-8">
                         <div id="echart" style="height:200px;width:100%;"></div>
-                    </div>
+                    </div> -->
                     <div class="col-lg-4">
                         <div class="card sameheight-item stats">
                             <div class="card-block">
@@ -218,7 +218,7 @@
                                         <div class="stat-icon"><i class="fa fa-rocket"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$todayusersignup}</div>
-                                            <div class="name"> {:__('Today user signup')}</div>
+                                            <div class="name"> {:__('昨日佣金')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 30%"></div>
@@ -228,7 +228,7 @@
                                         <div class="stat-icon"><i class="fa fa-shopping-cart"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$todayuserlogin}</div>
-                                            <div class="name"> {:__('Today user login')}</div>
+                                            <div class="name"> {:__('佣金总额')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
@@ -238,7 +238,7 @@
                                         <div class="stat-icon"><i class="fa fa-line-chart"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$todayorder}</div>
-                                            <div class="name"> {:__('Today order')}</div>
+                                            <div class="name"> {:__('已提现')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
@@ -248,13 +248,13 @@
                                         <div class="stat-icon"><i class="fa fa-users"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$unsettleorder}</div>
-                                            <div class="name"> {:__('Unsettle order')}</div>
+                                            <div class="name"> {:__('未提现')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-6  stat-col">
+                                    <!-- <div class="col-xs-6  stat-col">
                                         <div class="stat-icon"><i class="fa fa-list-alt"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$sevendnu}</div>
@@ -273,7 +273,7 @@
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
