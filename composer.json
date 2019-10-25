@@ -15,10 +15,10 @@
         }
     ],
     "require": {
-        "php": ">=7.2.0",
+        "php": ">=7.0.0",
         "topthink/framework": "~5.0.24",
         "overtrue/wechat": "~4.1",
-        "shulidata/easyalipay": "~1.0",
+        "shulidata/easyalipay": "dev-master",
         "endroid/qr-code": "^1.9",
         "topthink/think-captcha": "^1.0",
         "mtdowling/cron-expression": "^1.2",
