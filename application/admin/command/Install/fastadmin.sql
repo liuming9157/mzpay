@@ -655,6 +655,21 @@ BEGIN;
 INSERT INTO `fa_order` VALUES (1, 68.99,1,'wechat',1492186163, 1502029281);
 COMMIT;
 
+DROP TABLE IF EXISTS `fa_news`;
+CREATE TABLE `fa_news` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `title` varchar(20) NOT NULL DEFAULT '' COMMENT '标题',
+  `subtitle` varchar(50) NOT NULL DEFAULT '' COMMENT '副标题',
+  `tag` varchar(20) NOT NULL DEFAULT '' COMMENT '标签',
+  `createtime` int(10) DEFAULT NULL COMMENT '创建时间',
+  `updatetime` int(10) DEFAULT NULL COMMENT '更新时间',
+  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='新闻';
+
+BEGIN;
+INSERT INTO `fa_news` VALUES (1, '刷脸支付','明志科技推出刷脸支付系统','明志科技',1492186163, 1502029281);
+COMMIT;
 
 
 SET FOREIGN_KEY_CHECKS = 1;
