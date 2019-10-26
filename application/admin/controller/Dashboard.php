@@ -49,8 +49,7 @@ class Dashboard extends Backend
             'paylist'          => $paylist,
             'createlist'       => $createlist,
             'addonversion'       => $addonVersion,
-            'uploadmode'       => $uploadmode,
-            'news'            =>$news
+            'uploadmode'       => $uploadmode
         ]);
 
         return $this->view->fetch();
