@@ -583,12 +583,12 @@ COMMIT;
 DROP TABLE IF EXISTS `fa_agent`;
 CREATE TABLE `fa_agent` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '序号',
-  `company` varchar(20) NOT NULL DEFAULT '' COMMENT '公司',
+  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '公司',
   `contact` varchar(20) NOT NULL DEFAULT '' COMMENT '联系人',
   `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '联系电话',
   `start_date` date  DEFAULT NULL COMMENT '合同开始',
   `end_date` date  DEFAULT NULL COMMENT '合同结束',
-  `salesman_id` int(20) NOT NULL DEFAULT 0 COMMENT '业务员',
+  `salesman_id` int(20) NOT NULL DEFAULT 1 COMMENT '所属业务员',
   `level` enum('1','2','3') NOT NULL DEFAULT '3' COMMENT '代理商级别:1=一级,2=二级,3=三级',
   `status` enum('0','1') NOT NULL DEFAULT '0' COMMENT '状态:0=未签约,1=已签约',
   `createtime` int(10) DEFAULT NULL COMMENT '创建时间',
@@ -599,7 +599,7 @@ CREATE TABLE `fa_agent` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='代理商';
 
 BEGIN;
-INSERT INTO `fa_agent` VALUES (1, '三快科技', '13312345678', '张三', '20190527', '20200527', '李四', '3','0',1492186163, 1502029281);
+INSERT INTO `fa_agent` VALUES (1, '三快科技', '张三', '13312345678','20190527', '20200527', 1, '3','0',1492186163, 1502029281);
 COMMIT;
 
 
@@ -607,7 +607,7 @@ COMMIT;
 DROP TABLE IF EXISTS `fa_salesman`;
 CREATE TABLE `fa_salesman` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '序号',
-  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '公司',
+  `name` varchar(20) NOT NULL DEFAULT '' COMMENT '姓名',
   `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '联系电话',
   `status` enum('0','1') NOT NULL DEFAULT '1' COMMENT '状态:0=禁用,1=启用',
   `createtime` int(10) DEFAULT NULL COMMENT '创建时间',
@@ -625,8 +625,8 @@ DROP TABLE IF EXISTS `fa_store`;
 CREATE TABLE `fa_store` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '序号',
   `name` varchar(20) NOT NULL DEFAULT '' COMMENT '商户名',
-  `agent_id` int(10) NOT NULL DEFAULT 0 COMMENT '归属代理商',
-  `salesman_id` int(10) NOT NULL DEFAULT 0 COMMENT '归属业务员',
+  `agent_id` int(10) NOT NULL DEFAULT 1 COMMENT '归属代理商',
+  `salesman_id` int(10) NOT NULL DEFAULT 1 COMMENT '归属业务员',
   `status` enum('0','1') NOT NULL DEFAULT '1' COMMENT '状态:0=已签约,1=未签约',
   `createtime` int(10) DEFAULT NULL COMMENT '创建时间',
   `updatetime` int(10) DEFAULT NULL COMMENT '更新时间',
@@ -643,8 +643,8 @@ DROP TABLE IF EXISTS `fa_order`;
 CREATE TABLE `fa_order` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '序号',
   `amount` decimal(10,2) NOT NULL DEFAULT 0.00 COMMENT '金额',
-  `store_id` int(10) NOT NULL DEFAULT 0 COMMENT '归属商户',
-  `type` enum('wechat','alipay') NOT NULL DEFAULT 'wechat' COMMENT '支付平台:wechat=微信.alipay=支付宝',
+  `store_id` int(10) NOT NULL DEFAULT 1 COMMENT '归属商户',
+  `type` enum('wechat','alipay') NOT NULL DEFAULT 'wechat' COMMENT '支付平台:wechat=微信,alipay=支付宝',
   `createtime` int(10) DEFAULT NULL COMMENT '创建时间',
   `updatetime` int(10) DEFAULT NULL COMMENT '更新时间',
   

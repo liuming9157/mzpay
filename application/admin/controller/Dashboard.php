@@ -33,6 +33,8 @@ class Dashboard extends Backend
         Config::parse($addonComposerCfg, "json", "composer");
         $config = Config::get("composer");
         $addonVersion = isset($config['version']) ? $config['version'] : __('Unknown');
+        //新增
+        $news=Db::name('news')->select();
         $this->view->assign([
             'totaluser'        => 35200,
             'totalviews'       => 219390,
@@ -47,7 +49,8 @@ class Dashboard extends Backend
             'paylist'          => $paylist,
             'createlist'       => $createlist,
             'addonversion'       => $addonVersion,
-            'uploadmode'       => $uploadmode
+            'uploadmode'       => $uploadmode,
+            'news'            =>$news
         ]);
 
         return $this->view->fetch();
