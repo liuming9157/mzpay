@@ -34,7 +34,7 @@ class Dashboard extends Backend
         $config = Config::get("composer");
         $addonVersion = isset($config['version']) ? $config['version'] : __('Unknown');
         //新增
-        $news=Db::name('news')->select();
+        //$news=Db::name('news')->select();
         $this->view->assign([
             'totaluser'        => 35200,
             'totalviews'       => 219390,
